@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-console.log('Welcome to the Brain Games!')
+import helloGuest from '../src/cli.js'
+
+helloGuest();
