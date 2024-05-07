@@ -4,7 +4,7 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const isEven = (num) => num % 2 === 0;
 
-function randomInteger (min, max) {
+const randomInteger = (min, max) => {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
 }

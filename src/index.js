@@ -3,15 +3,15 @@ import readlineSync from 'readline-sync';
 const countRound = 3;
 
 export default (description, getQuestionAndAnswer) => { 
-console.log('Welcome to the Brain Games!');
+console.log('Welcome to the Brain Games!'); //выполняется
 
-const name = readlineSync.question('May I have your name? ');
+const name = readlineSync.question('May I have your name? ');// выполняется
 
-console.log(`Hello, ${name}!`);
+console.log(`Hello, ${name}!`); // выполняется
 
-console.log(description);
+console.log(description); // выполняется
 
-for (i = 0; i < countRound; i++) {
+for (let i = 0; i < countRound; i++) {
     const [question, correctAnswer] = getQuestionAndAnswer(); 
     console.log(`Qestion: ${question}`)
 
