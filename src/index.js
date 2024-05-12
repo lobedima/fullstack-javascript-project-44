@@ -13,7 +13,7 @@ console.log(description); // выполняется
 
 for (let i = 0; i < countRound; i++) {
     const [question, correctAnswer] = getQuestionAndAnswer(); 
-    console.log(`Qestion: ${question}`)
+    console.log(`Question: ${question}`)
 
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
