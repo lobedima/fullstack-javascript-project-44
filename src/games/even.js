@@ -12,7 +12,6 @@ const randomInteger = (min, max) => {
 const getQuestionAndAnswer = () => {
     const question = randomInteger(1, 9);
     const correctAnswer = isEven(question) ? 'yes' : 'no';
-
     return [question, correctAnswer];
 }
 

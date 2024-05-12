@@ -15,7 +15,7 @@ for (let i = 0; i < countRound; i++) {
     const [question, correctAnswer] = getQuestionAndAnswer(); 
     console.log(`Qestion: ${question}`)
 
-    const answer = readlineSync.question('Yoyr answer: ');
+    const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
         console.log('Correct!');
     } else {
