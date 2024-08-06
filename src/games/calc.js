@@ -1,47 +1,41 @@
 import game from '../index.js';
+import getRandomInRange from '../utils.js';
 
 const description = 'What is the result of the expression?';
 
-const randomSymbol = () => {
-    const symbolMath = ['-', '+', '*'];
-    return symbolMath[random(0, symbolMath.length - 1)];
-  };
-
-const random = (min = 0, max = 100) => Math.floor(min + Math.random() * (max - min + 1));
-
-const randomInteger= (min, max) => {
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
-}
-
-const calculation = (num1, num2, operator) => {
-  switch (operator) {
-    case '+':
-      return num1 + num2;
-
-    case '-':
-      return num1 - num2;
-
-    case '*':
-      return num1 * num2;
-
-    default:
-      Nan
-  }
+const getRandomOperator = () => { 
+    const operators = ['+', '-', '*']
+    return operators[getRandomInRange(0, operators.length - 1)];
 };
 
-const num1 = randomInteger(1, 100);
-
-const num2 = randomInteger(1, 100);
-
-const operator = randomSymbol();
+const calculation = (num1, num2, operator) => {
+    switch (operator) {
+      case '+':
+        return num1 + num2;
+  
+      case '-':
+        return num1 - num2;
+  
+      case '*':
+        return num1 * num2;
+  
+      default:
+        throw new Error(`Invalid operator - ${operator}`)
+    }
+  };
 
 const getQuestionAndAnswer = () => {
-  const question = `${num1} ${operator} ${num2}`;
-  const correctAnswer = calculation(num1, num2, operator).toString();
-  return [question, correctAnswer];
+  const num1 = getRandomInRange();
+  const num2 = getRandomInRange();
+  const operator = getRandomOperator();
+
+const question = `${num1} ${operator} ${num2}`; 
+
+const answer = String(calculation(num1, num2, operator));
+
+return [question, answer] 
 };
 
 export default () => {
-    game(description, getQuestionAndAnswer)
+  game(description, getQuestionAndAnswer)
 };

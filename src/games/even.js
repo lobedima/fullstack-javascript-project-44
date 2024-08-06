@@ -1,19 +1,16 @@
 import game from '../index.js';
+import getRandomInRange from '../utils.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const isEven = (num) => num % 2 === 0;
 
-const randomInteger = (min, max) => {
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
-}
-
 const getQuestionAndAnswer = () => {
-    const question = randomInteger(1, 9);
-    const correctAnswer = isEven(question) ? 'yes' : 'no';
+    const number = getRandomInRange();
+    const correctAnswer = isEven(number) ? 'yes' : 'no';
+    const question = String(number);
     return [question, correctAnswer];
-}
+};
 
 export default () => {
     game(description, getQuestionAndAnswer)
