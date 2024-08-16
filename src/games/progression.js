@@ -22,6 +22,5 @@ const getQuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 
-export default () => {
-  return game(description, getQuestionAndAnswer);
-};
+export default () => game(description, getQuestionAndAnswer);
+
