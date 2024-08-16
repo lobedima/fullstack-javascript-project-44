@@ -12,10 +12,10 @@ const calculation = (num1, num2, operator) => {
   switch (operator) {
     case '+':
       return num1 + num2;
-  
+
     case '-':
       return num1 - num2;
-  
+
     case '*':
       return num1 * num2;
 
@@ -29,7 +29,7 @@ const getQuestionAndAnswer = () => {
   const num2 = getRandomInRange();
   const operator = getRandomOperator();
 
-const question = `${num1} ${operator} ${num2}`;
+  const question = `${num1} ${operator} ${num2}`;
 
   const answer = String(calculation(num1, num2, operator));
 
