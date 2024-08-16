@@ -3,39 +3,39 @@ import getRandomInRange from '../utils.js';
 
 const description = 'What is the result of the expression?';
 
-const getRandomOperator = () => { 
-    const operators = ['+', '-', '*']
-    return operators[getRandomInRange(0, operators.length - 1)];
+const getRandomOperator = () => {
+  const operators = ['+', '-', '*'];
+  return operators[getRandomInRange(0, operators.length - 1)];
 };
 
 const calculation = (num1, num2, operator) => {
-    switch (operator) {
-      case '+':
-        return num1 + num2;
+  switch (operator) {
+    case '+':
+      return num1 + num2;
   
-      case '-':
-        return num1 - num2;
+    case '-':
+      return num1 - num2;
   
-      case '*':
-        return num1 * num2;
-  
-      default:
-        throw new Error(`Invalid operator - ${operator}`)
-    }
-  };
+    case '*':
+      return num1 * num2;
+
+    default:
+      throw new Error(`Invalid operator - ${operator}`);
+  }
+};
 
 const getQuestionAndAnswer = () => {
   const num1 = getRandomInRange();
   const num2 = getRandomInRange();
   const operator = getRandomOperator();
 
-const question = `${num1} ${operator} ${num2}`; 
+const question = `${num1} ${operator} ${num2}`;
 
-const answer = String(calculation(num1, num2, operator));
+  const answer = String(calculation(num1, num2, operator));
 
-return [question, answer] 
+  return [question, answer];
 };
 
 export default () => {
-  game(description, getQuestionAndAnswer)
+  game(description, getQuestionAndAnswer);
 };
