@@ -11,7 +11,7 @@ const getFindSimpleNum = (num) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const num = getRandomInRange();
+  const num = getRandomInRange(1, 100);
   const correctAnswer = getFindSimpleNum(num) === true ? 'yes' : 'no';
   return [num, correctAnswer];
 };
